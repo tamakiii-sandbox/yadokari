@@ -50,7 +50,7 @@ const init = (options) => {
 fetch(options.url, init(options))
   .then(async response => {
     const body = await response.text();
-    console.log(body)
+    process.stdout.write(body);
   })
   .catch(error => {
     throw error
