@@ -1,19 +1,25 @@
 version: "3.7"
 services:
   fetcher:
-    build: docker/fetcher
+    build:
+      context: docker/fetcher
+      target: ${ENVIRONMENT:-development}
     working_dir: /app
     volumes:
       - .:/app
 
   parser:
-    build: docker/parser
+    build:
+      context: docker/parser
+      target: ${ENVIRONMENT:-development}
     working_dir: /app
     volumes:
       - .:/app
 
   loader:
-    build: docker/loader
+    build:
+      context: docker/loader
+      target: ${ENVIRONMENT:-development}
     working_dir: /app
     volumes:
       - .:/app
