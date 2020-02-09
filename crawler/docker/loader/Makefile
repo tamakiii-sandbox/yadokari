@@ -1,6 +1,6 @@
 .PHONY: bash
 
-NAME := fetcher
+NAME := loader
 
 bash:
 	cd ../.. && docker-compose run --rm $(NAME) $@
