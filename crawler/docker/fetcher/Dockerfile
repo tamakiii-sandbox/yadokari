@@ -1,6 +1,6 @@
-FROM alpine:3.11.3 AS production-pseudo
+FROM node:13.8.0-alpine3.11 AS production-pseudo
 
-RUN apk add --no-cache make bash curl
+RUN apk add --no-cache make bash
 
 # --
 
