@@ -1,6 +1,6 @@
 .PHONY: install clean
 
-ENVIRONMENT := $(shell [ -f .evn ] && grep '^ENVIRONMENT=' .env | sed -E 's/ENVIRONMENT=//')
+ENVIRONMENT := $(shell [ -f .env ] && grep '^ENVIRONMENT=' .env | sed -E 's/ENVIRONMENT=//')
 
 install: \
 	.env \
@@ -10,6 +10,7 @@ install: \
 .env:
 	touch $@
 	echo "ENVIRONMENT=production-pseudo" >> $@
+	echo "PORT_PARSER_CHROME=9220" >> $@
 
 docker-comppose.override.yml:
 	touch $@

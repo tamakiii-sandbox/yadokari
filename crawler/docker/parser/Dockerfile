@@ -11,4 +11,5 @@ FROM production-pseudo AS development
 
 RUN apk add --no-cache \
       font-noto \
-      font-noto-cjk-extra
+      font-noto-cjk-extra \
+      curl
