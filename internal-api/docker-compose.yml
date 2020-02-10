@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  rust:
+    build:
+      context: docker/rust
+      target: ${ENVIRONMENT:-production-pseudo}
+    volumes:
+      - .:/app
+    networks:
+      - default
+      - database
+
+networks:
+  database:
+    name: moyohi_database_network
+    driver: bridge
