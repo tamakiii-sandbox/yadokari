@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  mysql:
+    build:
+      context: docker/mysql
+      target: ${ENVIRONMENT:-production-pseudo}
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: usr
+      MYSQL_PASSWORD: pass
+    volumes:
+      - ./docker/mysql/my.cnf:/root/.my.cnf
+
+networks:
+  default:
+    name: moyohi_database_network
+    driver: bridge
