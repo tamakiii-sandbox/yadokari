@@ -9,7 +9,12 @@ services:
       MYSQL_USER: usr
       MYSQL_PASSWORD: pass
     volumes:
+      - mysql:/var/lib/mysql
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d:ro
       - ./docker/mysql/my.cnf:/root/.my.cnf
+
+volumes:
+  mysql:
 
 networks:
   default:
