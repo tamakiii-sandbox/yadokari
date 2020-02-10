@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  fetcher:
+    build:
+      context: docker/fetcher
+      target: ${ENVIRONMENT:-development}
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  parser:
+    build:
+      context: docker/parser
+      target: ${ENVIRONMENT:-development}
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - ${PORT_PARSER_CHROME:-9220}:9220
+
+  loader:
+    build:
+      context: docker/loader
+      target: ${ENVIRONMENT:-development}
+    working_dir: /app
+    volumes:
+      - .:/app
