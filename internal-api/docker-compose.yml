@@ -13,5 +13,5 @@ services:
 
 networks:
   database:
-    name: moyohi_database_network
+    name: yadokari_database_network
     driver: bridge

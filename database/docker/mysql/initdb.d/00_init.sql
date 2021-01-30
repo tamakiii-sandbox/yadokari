@@ -1,2 +1,2 @@
-CREATE DATABASE IF NOT EXISTS `moyohi_entity` ;
-GRANT ALL ON `moyohi_entity`.* TO `usr`@`%` WITH GRANT OPTION;
+CREATE DATABASE IF NOT EXISTS `yadokari_entity` ;
+GRANT ALL ON `yadokari_entity`.* TO `usr`@`%` WITH GRANT OPTION;
