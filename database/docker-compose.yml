@@ -18,5 +18,5 @@ volumes:
 
 networks:
   default:
-    name: moyohi_database_network
+    name: yadokari_database_network
     driver: bridge

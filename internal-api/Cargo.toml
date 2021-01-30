@@ -1,5 +1,5 @@
 [package]
-name = "moyohi-internal-api"
+name = "yadokari-internal-api"
 version = "0.1.0"
 authors = ["tamakiii"]
 edition = "2018"

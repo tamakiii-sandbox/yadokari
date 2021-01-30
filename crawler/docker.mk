@@ -1,8 +1,8 @@
-.PHONY: install clean
+.PHONY: install build up down clean
 
-ENVIRONMENT := $(shell [ -f .env ] && grep '^ENVIRONMENT=' .env | sed -E 's/ENVIRONMENT=//')
+ENVIRONMENT ?= $(shell [ -f .env ] && grep '^ENVIRONMENT=' .env | sed -E 's/ENVIRONMENT=//')
 
-install: \
+setup: \
 	.env \
 	docker-comppose.override.yml \
 	build
@@ -18,5 +18,11 @@ docker-comppose.override.yml:
 build:
 	docker-compose build
 
-clean:
-	#
+up:
+	docker-compose up
+
+down:
+	docker-compose down
+
+clean: down
+	rm -rf docker-compose.override.yml
