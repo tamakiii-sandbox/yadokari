@@ -12,7 +12,7 @@ setup: \
 	echo "ENVIRONMENT=production-pseudo" >> $@
 	echo "PORT_PARSER_CHROME=9220" >> $@
 
-docker-comppose.override.yml:
+docker-compose.override.yml:
 	touch $@
 
 build:
